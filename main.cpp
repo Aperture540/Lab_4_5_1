@@ -11,15 +11,28 @@
  * Created on September 26, 2017, 2:42 PM
  */
 
-#include <cstdlib>
+#include <string> 
+#include <iostream>
 
-using namespace std;
-
-/*
- * 
- */
-int main(int argc, char** argv) {
-
-    return 0;
+int main() {
+    std::string sentence;
+    std::getline(std::cin, sentence);
+    
+    // manipulate the sentence here
+    
+    for (int i = 0; i < sentence.length();) 
+    {
+        if(sentence.at(i) == ' ' && sentence.at((i)-1) == ' ')
+        {
+            sentence.erase(i,1);
+        }
+        else
+        {
+            i++;
+        }
+    }
+    
+    std::cout << sentence << "\n";
 }
+
 
